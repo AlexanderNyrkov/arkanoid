@@ -8,15 +8,15 @@ import java.awt.geom.Rectangle2D;
  * class describing the block
  */
 public class Block  {
-    private final Image img; // block image
-    private final int upHeight; // upper part of the unit
-    private final int bottomHeight; // bottom of the unit
-    private final int width; // width of the block
-    private final int height; // height of block
-    private int spaceX; // indentation on the X axis
-    private int spaceY; // indentation on the Y axis
-    private int x0; // left side on the coordinate axis X block
-    private int y0; // coordinate on top of the unit Y axis
+    private final Image img;
+    private final int upHeight;
+    private final int bottomHeight;
+    private final int width;
+    private final int height;
+    private int spaceX;
+    private int spaceY;
+    private int x0;
+    private int y0;
 
     /**
      * @param x0 left point on the X axis unit
@@ -26,13 +26,13 @@ public class Block  {
     * @param imgPath path to the image
      */
     public Block(int x0, int y0, int spaceX, int spaceY, String imgPath) {
-        this.x0 = x0 + spaceX; // coordinate unit along the X-axis + padding
-        this.y0 = y0 + spaceY; // coordinate of the block on the Y + axis indent
-        this.img = new ImageIcon(getClass().getResource(imgPath)).getImage(); // create the image, pointing his way
-        this.width = img.getWidth(null); // the width of the image block
-        this.height = img.getHeight(null); // height of the image block
-        this.upHeight = height / 2; // half a block from the center of the top, if it enters into which the ball should fly off up
-        this.bottomHeight = height; // half a block from the center to the bottom, in contact with which the ball must fly off down
+        this.x0 = x0 + spaceX;
+        this.y0 = y0 + spaceY;
+        this.img = new ImageIcon(getClass().getResource(imgPath)).getImage();
+        this.width = img.getWidth(null);
+        this.height = img.getHeight(null);
+        this.upHeight = height / 2;
+        this.bottomHeight = height;
     }
 
     public int getX0() {

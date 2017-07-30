@@ -13,25 +13,25 @@ import java.awt.geom.Ellipse2D;
  * interface implements org.shurik.arkanoid.Paintable
  */
 public class Ball implements Moveable, Paintable {
-    private final Image img; // ball image
-    private final int diameter; // ball diameter
-    private int v; // ball speed
-    private int dx; // the direction of movement of the ball along the X axis
-    private int dy; // movement direction of the ball on the Y axis
-    private int x0; // variable declaration, are the coordinates of the left side of the ball on the X axis
-    private int y0; // variable declaration, are the coordinates of the top of the ball on the Y axis
+    private final Image img;
+    private final int diameter;
+    private int v;
+    private int dx;
+    private int dy;
+    private int x0;
+    private int y0;
     /**
      * @param imgPath path to the image
      * @param x0 left point of the ball on the X axis
      * @param y0 highest point of the ball on the Y axis
      */
     public Ball(int x0, int y0, String imgPath) {
-        this.img = new ImageIcon (getClass().getResource(imgPath)).getImage(); // create the image, pointing his way
-        this.x0 = x0; // left ball point on the X axis
-        this.y0 = y0; // upper ball point on the Y axis
-        this.diameter = img.getWidth(null); // diameter equal to the width of the image
-        this.v = 9; // set the speed of the ball
-        this.dy = v; // ball on Y axis direction, a positive value when the ball is flying down at a negative - up
+        this.img = new ImageIcon (getClass().getResource(imgPath)).getImage();
+        this.x0 = x0;
+        this.y0 = y0;
+        this.diameter = img.getWidth(null);
+        this.v = 9;
+        this.dy = v;
     }
 
     public int getX0() {

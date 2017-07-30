@@ -10,21 +10,21 @@ import java.awt.geom.Rectangle2D;
  * interface implements org.shurik.arkanoid.Paintable
  */
 public class Player implements Moveable, Paintable{
-    private final Image img; // player image
-    private final int vStop; // speed, when a player does not move
-    private final int vStart; // player's speed in motion
-    private final int width; // the width of the player
-    private final int height; // height of the player
-    private final int centerWidth; // the width of the center
-    private final int ultraLeftPartStart; // origin of the left-most part of the player
-    private final int partWidth; // the width of the player
-    private final int leftPartStart; // origin of the left side of the player
-    private final int centerPartStart; // origin central player
-    private final int rightPartStart; // origin of the right side of the player
-    private final int ultraRightPartStart; // the origin of the rightmost part of the player
-    private int v; // player's speed
-    private int x0; // left point player X axis
-    private int y0; // upper point player Y-axis
+    private final Image img;
+    private final int vStop;
+    private final int vStart;
+    private final int width;
+    private final int height;
+    private final int centerWidth;
+    private final int ultraLeftPartStart;
+    private final int partWidth;
+    private final int leftPartStart;
+    private final int centerPartStart;
+    private final int rightPartStart;
+    private final int ultraRightPartStart;
+    private int v;
+    private int x0;
+    private int y0;
 
     /**
      * @param x0 coordinate of the left point player
@@ -32,13 +32,13 @@ public class Player implements Moveable, Paintable{
      * @param imgPath path to image
      */
     public Player(int x0, int y0, String imgPath) {
-        this.x0 = x0; // Left point player X axis
-        this.y0 = y0; // upper point player Y axis
-        this.img = new ImageIcon (getClass().getResource(imgPath)).getImage(); // the image that you want to specify the path to the player's image
-        this.width = img.getWidth (null); // the width of the player is equal to the width of the image
-        this.height = img.getHeight (null); // height of the player is equal to the height of the image
-        this.vStart = 12; // set the speed of the player in motion
-        this.vStop = 0; // set speed when the player does not move
+        this.x0 = x0;
+        this.y0 = y0;
+        this.img = new ImageIcon (getClass().getResource(imgPath)).getImage();
+        this.width = img.getWidth (null);
+        this.height = img.getHeight (null);
+        this.vStart = 12;
+        this.vStop = 0;
         this.centerWidth = 5; // the width of the center when hit by the ball that must change its direction
         this.partWidth = (width - centerWidth) / 4; // often takes the player on top and bottom to the central part, in contact with which the ball must change its direction
         this.ultraLeftPartStart = 0; // leftmost part begins with the leftmost point of a player when hit by that between the beginning and the end of the ball should fly off much left
